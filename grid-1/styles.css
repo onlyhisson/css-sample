@@ -1,0 +1,44 @@
+html {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 100px auto 50px;
+  grid-template-areas:
+    "header header"
+    "main side"
+    "footer footer";
+}
+
+header {
+  color: white;
+  background-color: black;
+  grid-area: header;
+}
+
+main {
+  background-color: orange;
+  grid-area: main;
+}
+
+aside {
+  background-color: wheat;
+  grid-area: side;
+}
+
+footer {
+  background-color: grey;
+  grid-area: footer;
+}
+
+.content-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
