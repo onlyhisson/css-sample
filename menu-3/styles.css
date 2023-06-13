@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  padding-top: 56px;
+  font-family: "Instagram Sans";
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  background: #fff;
+  transition: 0.3s;
+}
+
+nav.scrolled-down {
+  height: 88px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.14);
+}
+
+nav.scrolled-down img {
+  scale: 1.25;
+}
+
+.links {
+  gap: 16px;
+  display: flex;
+}
+
+nav img {
+  width: 24px;
+  height: 24px;
+  transform-origin: 0% 50%;
+  transition: 0.3s;
+}
+
+.container {
+  margin: 0 10%;
+  width: 80%;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
