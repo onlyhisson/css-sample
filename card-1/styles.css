@@ -43,6 +43,7 @@ body {
   border-radius: 8px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
+
 .card__body--front {
   background-image: radial-gradient(
     circle 248px at center,
