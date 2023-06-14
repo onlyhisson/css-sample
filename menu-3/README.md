@@ -1,5 +1,4 @@
-![Project thumbnail](./img.png)
-![Project thumbnail](./img2.png)
+![Project thumbnail](./mov.gif)
 
 #### 참조
 
