@@ -21,7 +21,6 @@ body {
   position: relative;
   display: block;
   color: transparent;
-  overflow: hidden;
   animation: reveal 1s var(--total) forwards;
 }
 
