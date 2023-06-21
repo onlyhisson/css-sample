@@ -10,6 +10,20 @@
 
 <br>
 
+#### overflow: hidden;
+
+```
+.title span {
+    ...
+    overflow: hidden;
+    ...
+}
+```
+
+- .title span::after 가 rollOut 애니메이션이 실행 되는 동안 (x축 오른쪽으로 이동) span 영역 밖이 숨겨지는 효과
+
+<br>
+
 #### 참조
 
 [Julio Github](https://github.com/juliocodes-sm/Reels/tree/main/Typography/01)
