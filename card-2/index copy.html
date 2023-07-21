@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link href="../fontawesome-free-6.4.0-web/js/all.min.js" rel="stylesheet" />
+    <link href="./styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="screen">
+      <div class="screen-image"></div>
+      <div class="screen-content">
+        <i class="screen-icon fa-brands fa-codepen"></i>
+        <div class="screen-user">
+          <div class="screen-btn">
+            <span class="name" data-value="Frontend">Frontend</span>
+          </div>
+          <a class="link" href="#" target="_blank">onlyhisson</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // setinterval 실행 상태
+      let status = false;
+
+      // 요소 선택
+      const screen = document.querySelector(".screen-image");
+      const name = document.querySelector(".name");
+
+      // 문자열 랜덤 생성
+      const getRandomChar = (length) => {
+        const characters = "ABCDEFGHIJKLMNOPQRSTUVXYZ";
+        const emptyStrArr = Array(length).join(".").split(".");
+        const result = emptyStrArr.map((el) => {
+          return characters.charAt(
+            Math.floor(Math.random() * characters.length)
+          );
+        });
+        return result.join("");
+      };
+
+      // 해당 html content 텍스트 변경
+      const changeContent = () => {
+        // 중복 실행 방지
+        if (status) {
+          return;
+        }
+        status = true;
+
+        const originText = name.dataset.value.toUpperCase();
+        const originLen = originText.length;
+
+        const interval = 10;
+        let count = 0;
+        let newText = "";
+
+        const changeText = setInterval(() => {
+          count += interval;
+
+          // 초기에 변경
+          newText = getRandomChar(originLen);
+          name.textContent = newText;
+
+          // origin content 문자열 길이
+          const originSliceLen = Math.floor(count / 100);
+          const sliceOrigin = originText.slice(0, originSliceLen);
+          name.textContent = (sliceOrigin + newText).slice(0, originLen);
+
+          // 완료 후 초기화
+          if (originSliceLen >= originLen) {
+            clearInterval(changeText);
+            status = false;
+          }
+        }, interval);
+      };
+
+      screen.addEventListener("mouseover", (event) => {
+        changeContent();
+      });
+    </script>
+  </body>
+</html>

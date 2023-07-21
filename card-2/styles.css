@@ -1,0 +1,148 @@
+:root {
+  --glow-color: hsl(186 100% 69%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: grid;
+  place-content: center;
+  color: white;
+  background-image: linear-gradient(to right, #192542, #1c2a4a, #202f53);
+}
+
+.screen {
+  width: 400px;
+  display: flex;
+  border: 3px solid rgb(0, 218, 229, 0.5);
+  aspect-ratio: 2/3;
+  border-radius: 1rem;
+  background-color: rgb(0, 72, 176, 0.15);
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+
+.screen:after,
+.screen:before {
+  content: "";
+  height: 5px;
+  z-index: 4;
+  position: absolute;
+  left: 50%;
+  translate: -50% 0%;
+  background-color: white;
+}
+
+.screen:before {
+  width: 15%;
+  top: 0rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.screen:after {
+  width: 25%;
+  bottom: 0rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.screen > .screen-image {
+  background-image: url("https://images.pexels.com/photos/2777898/pexels-photo-2777898.jpeg?w=1260&h=750&dpr=1?cs=tinysrgb");
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+  top: 0px;
+  background-size: 200%;
+  background-position: 0% 0%;
+  filter: sepia(100%) hue-rotate(160deg);
+  opacity: 0.4;
+  animation: pan-image 25s linear infinite;
+}
+
+@keyframes pan-image {
+  50% {
+    background-position: right center;
+  }
+}
+
+.screen-user {
+  position: absolute;
+  top: 70%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  font-size: 40px;
+}
+
+.screen-user span {
+  display: block;
+  text-align: center;
+  line-height: 1rem;
+  text-transform: uppercase;
+  font-family: monospace;
+}
+
+.screen-user a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.screen-btn {
+  position: relative;
+  color: var(--glow-color);
+  cursor: pointer;
+  padding: 0.35em 0.5em;
+  border: 0.12em solid var(--glow-color);
+  border-radius: 0.4em;
+  background: none;
+  font-size: 1em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+
+  -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  animation: border-flicker 2s linear infinite;
+}
+
+@keyframes border-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  2% {
+    opacity: 1;
+  }
+  4% {
+    opacity: 0.1;
+  }
+
+  8% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
