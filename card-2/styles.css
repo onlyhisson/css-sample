@@ -59,7 +59,7 @@ body {
 }
 
 .screen > .screen-image {
-  background-image: url("https://images.pexels.com/photos/2777898/pexels-photo-2777898.jpeg?w=1260&h=750&dpr=1?cs=tinysrgb");
+  background-image: url("./bg-img.jpg");
   height: 100%;
   width: 100%;
   position: absolute;
